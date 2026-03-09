@@ -10,7 +10,7 @@
   --accent-hover: #5b21b6;
   --line: #ddd6fe;
   --card-bg: #ffffff;
-  --contact-bg: #000000;
+  --contact-bg: #121212;
   --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 14px 34px rgba(0, 0, 0, 0.12);
   --radius: 12px;
@@ -35,7 +35,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body.dark-mode {
+body.dark-theme {
   background: #1a1a1a;
   color: #f5f5f5;
 }
@@ -96,29 +96,34 @@ main section:nth-child(even) {
   background: #e6e6fa;
 }
 
-body.dark-mode main section.card-section {
-  background: #2a2a2a;
+body.dark-theme main section:nth-child(odd) {
+  background: #242424;
   color: #f5f5f5;
 }
 
-body.dark-mode p,
-body.dark-mode h2,
-body.dark-mode .section-label,
-body.dark-mode .eyebrow,
-body.dark-mode .tech,
-body.dark-mode label,
-body.dark-mode .nav-links a,
-body.dark-mode .contact-email a {
+body.dark-theme main section:nth-child(even) {
+  background: #2f2740;
+  color: #f5f5f5;
+}
+
+body.dark-theme p,
+body.dark-theme h2,
+body.dark-theme .section-label,
+body.dark-theme .eyebrow,
+body.dark-theme .tech,
+body.dark-theme label,
+body.dark-theme .nav-links a,
+body.dark-theme .contact-email a {
   color: #d1d5db;
 }
 
-body.dark-mode .nav-links a:hover,
-body.dark-mode .nav-links a.active,
-body.dark-mode .brand,
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode h4 {
+body.dark-theme .nav-links a:hover,
+body.dark-theme .nav-links a.active,
+body.dark-theme .brand,
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4 {
   color: #f5f5f5;
 }
 
@@ -149,7 +154,7 @@ body.dark-mode h4 {
   backdrop-filter: blur(10px);
 }
 
-body.dark-mode .site-header {
+body.dark-theme .site-header {
   background: rgba(26, 26, 26, 0.92);
   border-color: #3a3a3a;
 }
@@ -221,15 +226,17 @@ body.dark-mode .site-header {
 }
 
 .profile-picture {
-  width: 172px;
-  height: 172px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
+  display: block;
+  margin-inline: auto;
   border-radius: 50%;
   border: 4px solid #ffffff;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
 
-body.dark-mode .profile-picture {
+body.dark-theme .profile-picture {
   border-color: #2a2a2a;
 }
 
@@ -284,12 +291,22 @@ body.dark-mode .profile-picture {
   border: 1px solid #d1d5db;
 }
 
-body.dark-mode .btn-secondary,
-body.dark-mode .btn-ghost,
-body.dark-mode .mode-toggle {
+body.dark-theme .btn-secondary,
+body.dark-theme .btn-ghost,
+body.dark-theme .mode-toggle {
   background: #333333;
   border-color: #4b5563;
   color: #f5f5f5;
+}
+
+.mode-toggle {
+  min-width: 46px;
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  line-height: 1;
 }
 
 .about-grid {
@@ -324,15 +341,15 @@ body.dark-mode .mode-toggle {
   box-shadow: var(--shadow-sm);
 }
 
-body.dark-mode .card,
-body.dark-mode .skill-card,
-body.dark-mode .project-card,
-body.dark-mode .timeline-card,
-body.dark-mode .cert-card,
-body.dark-mode .edu-card,
-body.dark-mode .contact-wrap form,
-body.dark-mode input,
-body.dark-mode textarea {
+body.dark-theme .card,
+body.dark-theme .skill-card,
+body.dark-theme .project-card,
+body.dark-theme .timeline-card,
+body.dark-theme .cert-card,
+body.dark-theme .edu-card,
+body.dark-theme .contact-wrap form,
+body.dark-theme input,
+body.dark-theme textarea {
   background: #333333;
   border-color: #4b5563;
   color: #f5f5f5;
@@ -433,12 +450,12 @@ body.dark-mode textarea {
 }
 
 .contact-section {
-  background: #000000 !important;
+  background: #121212 !important;
   color: #ffffff;
 }
 
-body.dark-mode .contact-section {
-  background: #000000 !important;
+body.dark-theme .contact-section {
+  background: #121212 !important;
 }
 
 .contact-section p,
@@ -446,6 +463,14 @@ body.dark-mode .contact-section {
 .contact-section .section-label,
 .contact-section label {
   color: #f5f5f5;
+}
+
+
+.contact-section a,
+.contact-section .project-card a,
+.contact-section .social-links a,
+.contact-section .contact-email a {
+  color: #ffffff;
 }
 
 .contact-wrap {
@@ -584,7 +609,7 @@ textarea:focus {
     border: 1px solid var(--line);
   }
 
-  body.dark-mode .nav-links {
+  body.dark-theme .nav-links {
     background: #2a2a2a;
     border-color: #4b5563;
   }
