@@ -72,16 +72,17 @@ sections.forEach((section) => navObserver.observe(section));
 
 if (darkModeToggle) {
   const applyDarkMode = (enabled) => {
-    document.body.classList.toggle('dark-mode', enabled);
+    document.body.classList.toggle('dark-theme', enabled);
     darkModeToggle.setAttribute('aria-pressed', String(enabled));
-    darkModeToggle.textContent = enabled ? 'Light Mode' : 'Dark Mode';
+    darkModeToggle.innerHTML = enabled ? '<span aria-hidden="true">☀️</span>' : '<span aria-hidden="true">🌙</span>';
+    darkModeToggle.setAttribute('aria-label', enabled ? 'Switch to light mode' : 'Switch to dark mode');
   };
 
   const storedMode = localStorage.getItem('theme');
   applyDarkMode(storedMode === 'dark');
 
   darkModeToggle.addEventListener('click', () => {
-    const nextDark = !document.body.classList.contains('dark-mode');
+    const nextDark = !document.body.classList.contains('dark-theme');
     applyDarkMode(nextDark);
     localStorage.setItem('theme', nextDark ? 'dark' : 'light');
   });
